@@ -1,15 +1,17 @@
 import json
+import os
 import sys
 
 
 def load_data(filepath):
-    with open(filepath, 'r') as file:
-        parsed = json.load(file)
-    return parsed
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath, 'r') as file_handler:
+        return json.load(file_handler)
 
 
-def pretty_print_json(data):
-    pretty_jsn = json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False)
+def pretty_print_json(jsn_data):
+    pretty_jsn = json.dumps(jsn_data, indent=4, sort_keys=True, ensure_ascii=False)
     print(pretty_jsn)
 
 
