@@ -11,7 +11,12 @@ def load_data(filepath):
 
 
 def pretty_print_json(jsn_data):
-    pretty_jsn = json.dumps(jsn_data, indent=4, sort_keys=True, ensure_ascii=False)
+    pretty_jsn = json.dumps(
+                        jsn_data,
+                        indent=4,
+                        sort_keys=True,
+                        ensure_ascii=False
+                        )
     print(pretty_jsn)
 
 
