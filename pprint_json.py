@@ -21,11 +21,10 @@ def pretty_print_json(jsn_data):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        jsn_file = sys.argv[1]
-        jsn_data = load_data(jsn_file)
-        if not jsn_data:
-            print('filepath does not exist')
-        pretty_print_json(jsn_data)
-    else:
+    if not len(sys.argv) > 1:
         print('\nEnter: python3 pprint_json.py "filepath"\n')
+    jsn_filepath = sys.argv[1]
+    jsn_data = load_data(jsn_filepath)
+    if not jsn_data:
+        print('filepath does not exist')
+    pretty_print_json(jsn_data)
